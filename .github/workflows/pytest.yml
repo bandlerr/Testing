@@ -4,5 +4,4 @@ jobs:
   test-factorial:
     runs-on: ubuntu-latest
     steps:
-      - run: docker build -t test/test /github/workspace/.
-      - run: docker run test/test
+      - run: ls github/workspace/.
