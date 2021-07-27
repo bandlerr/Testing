@@ -4,7 +4,7 @@ jobs:
   test-factorial:
     runs-on: ubuntu-latest
     env:
-      DOCKER_FILE: ../Dockerfile
+      DOCKER_FILE: github/workspace/Dockerfile
     steps:
       - name: build docker image
         run: docker build -t test/test ../.
