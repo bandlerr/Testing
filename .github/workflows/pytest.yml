@@ -1,5 +1,8 @@
 name: Factorial Tester
 on: [pull_request]
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
+jobs:
+  test-factorial:
+    runs-on: ubuntu-latest
+    steps:
+      run: docker build -t test/test ../.
+      run: docker run test/test
