@@ -1,5 +1,9 @@
 name: Factorial Tester
 on: [pull_request]
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
+jobs:
+  test-factorial:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: docker build -t test/test $GITHUB_WORKSPACE/.
+      - run: docker run test/test

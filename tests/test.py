@@ -16,7 +16,7 @@ class TestFactorial(unittest.TestCase):
         self.assertEqual(resultA, 1)
         self.assertEqual(resultB, 1)
         self.assertEqual(resultC, 3628800)
-        self.assertEqual(resultD, 6)
+        self.assertEqual(resultD, 720)
         
 
 if __name__ == '__main__':
