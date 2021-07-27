@@ -7,6 +7,6 @@ jobs:
       DOCKER_FILE: github/workspace/Dockerfile
     steps:
       - name: build docker image
-        run: docker build -t test/test ../.
+        run: docker build -t test/test github/workspace/.
       - name: run test
         run: docker run test/test
