@@ -3,14 +3,6 @@ on: [pull_request]
 jobs:
   test-factorial:
     runs-on: ubuntu-latest
-    env:
-      DOCKER_FILE: github/workspace/Dockerfile
     steps:
-      - uses: actions/checkout@v2
-
-            -   name: Build and push docker image
-                uses: docker/build-push-action@v1
-                with:
-                    dockerfile: Dockerfile
-                    repository: bandlerr/Testing
-                    tag_with_ref: true
+      - run: docker build -t test/test /github/workspace/.
+      - run: docker run test/test
