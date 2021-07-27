@@ -3,6 +3,10 @@ on: [pull_request]
 jobs:
   test-factorial:
     runs-on: ubuntu-latest
+    env:
+      DOCKER_FILE: ../Dockerfile
     steps:
-      run: docker build -t test/test ../.
-      run: docker run test/test
+      - name: build docker image
+        run: docker build -t test/test ../.
+      - name: run test
+        run: docker run test/test
