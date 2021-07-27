@@ -12,9 +12,12 @@ class TestFactorial(unittest.TestCase):
         resultA = main.factorial(0)
         resultB = main.factorial(1)
         resultC = main.factorial(10)
+        resultD = main.factorial(6)
         self.assertEqual(resultA, 1)
         self.assertEqual(resultB, 1)
         self.assertEqual(resultC, 3628800)
+        self.assertEqual(resultD, 6)
+        
 
 if __name__ == '__main__':
     unittest.main()
